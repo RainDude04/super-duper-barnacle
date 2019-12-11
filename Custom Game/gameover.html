@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title> Game Over </title>
+		<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+		<script>
+		function start(){
+		sjs.open("target", 800, 500);
+
+		var background = new sjs.Image("Images/gameover.jpg");
+		background.setSize(sjs.getWidth(), sjs.getHeight());
+		
+		var gameover_text = new sjs.Text("GameOver!",28,"red");
+		gameover_text.centerH().offset(250,85);
+
+		var startBtn = new sjs.Button("Restart", function(){
+		window.location = "index.html";
+		});
+
+		startBtn.centerH().offset(250,150);
+
+		var score_txt = new sjs.Text("Your Score: ", 21, "yellow");
+
+				score_txt.setText("Score: "+localStorage.getItem("score"));
+
+				}  //end start
+		</script>
+		</head>
+	<body onload="start()">
+	<h1> Game Over </h1>
+
+	<div id="target" style="margin:auto;background:black;"></div>
+</body>
+</html>
